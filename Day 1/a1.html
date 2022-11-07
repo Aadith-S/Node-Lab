@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" name="input" id="input">
+        <button onclick="inputtype();">Check</button>
+    </div>
+    <script>
+        function inputtype()
+        {
+
+        var input = document.querySelector("input").value;
+        var len = input.length;
+        var inputn = parseInt(input);
+        if(isNaN(inputn)){
+            if(input == "true" || input == "false"){
+            console.log("is Boolean");
+            }
+            else if(input == ""){
+            console.log("is null");
+            }
+            else if(input[0] == "[" && input[input.length-1] == "]"){
+            console.log("Array");
+            }
+            else if(input[0] == "{" && input[input.length-1] == "}"){
+            console.log("Object");
+            }
+            else{
+            console.log("is String");
+            }
+        }
+        else{
+            console.log("is number");
+        }
+        }
+    </script>
+</body>
+</html>
