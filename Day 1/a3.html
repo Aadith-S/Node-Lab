@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="printrow1();">Print Numbers v1</button>
+    <button onclick="printrow2();">Print Numbers v2</button>
+    <div></div>
+    <script>
+        var mat = [];
+        var limitr = prompt("Enter no of rows");
+        var limitc = prompt("Enter no of elements in each row");
+        for(let i = 0;i<limitr;i++){
+            var row = [];
+           for(let j = 0;j<limitc;j++){
+            var ele = prompt("Enter Numbers");
+            row.push(ele);
+            console.log("end");
+        }
+        console.log("row");
+        mat.push(row);
+        }
+        console.log(mat);
+        function printrow1(){
+            document.querySelector("div").innerText +=`Method 1:
+                `;
+            console.log("hlo");
+            let i = 1;
+            mat.forEach(e1=>{
+                document.querySelector("div").innerText +=`Row ${i} : `; 
+                i++;
+                e1.forEach(e2=>{
+                    document.querySelector("div").innerHTML +=`${e2} &nbsp`; 
+                })
+                document.querySelector("div").innerText +=`
+                `;
+            })
+        }
+        function printrow2(){
+            document.querySelector("div").innerText +=`Method 2:
+                `;
+            let i = 1;
+            mat.forEach(e1=>{
+                document.querySelector("div").innerText +=`Row ${i} : `; 
+                document.querySelector("div").innerText +=` ${e1}  `; 
+                i++;
+                document.querySelector("div").innerText +=`
+                `;
+            })
+        }
+    </script>
+</body>
+</html>
